@@ -1,0 +1,35 @@
+
+<div class="wrapper" >
+
+    <!-- <input  type="date"  [(ngModel)]="searchword" (change)="searchThis()"> -->
+
+
+    <div class="wrapper__row2" >
+
+        <div class="row" >
+           
+            <div class="table__wrapper">
+                <table cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th>#</th>
+                        <th>Naziv usluge</th>
+                        <th>Opis usluge</th>
+                    </tr>
+                    <tr *ngFor="let usluga of usluge">
+                        <td>{{usluga.uslugaID}}</td>
+                        <td>{{usluga.nazivUsluge}}</td>
+                        <td>{{usluga.opisUsluge}}</td>
+                    </tr>
+                </table>
+                <br>
+                <div>
+                <button (click)="kreirajUslugu()">Kreiraj uslugu</button>
+                <div class="space">
+                </div>
+                <button (click)="izmeniUslugu()">Izmeni uslugu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

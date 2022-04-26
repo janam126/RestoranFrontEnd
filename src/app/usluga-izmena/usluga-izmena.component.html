@@ -1,0 +1,62 @@
+<div class="wrapper" fxLayout="column" fxLayoutAlign="space-around center">
+    <div class="wrapper__row" fxLayout="column" fxLayoutAlign="space-around start">
+        <span class="title">Izmena usluge</span>
+        <div class="row" fxLayout="row" fxLayoutAlign="space-between center">
+           
+                <div class="zahtev__row" fxLayout="row" fxLayoutAlign="space-between start">                  
+                    <label>ID</label><br>
+                    <input class="input" type="number" [(ngModel)]="uslugaID" />
+                    <!-- <input [readonly] ="true" class="input" type="number" [(ngModel)]="uslugaID" /> -->
+                </div>
+                <div class="space">
+                </div>
+                <div class="zahtev__column" fxLayout="column" fxLayoutAlign="space-around start">
+                    <button (click)="pretrazi()" type="button">Pretrazi uslugu</button>
+                </div>
+                <br>
+                <div class="zahtev__row" fxLayout="row" fxLayoutAlign="space-between start">
+                    <label>Naziv usluge</label><br>
+                    <input class="input" type="text" [(ngModel)]="nazivUsluge" />
+                </div>
+                <div class="space">
+                </div>
+                <div class="zahtev__row" fxLayout="row" fxLayoutAlign="space-between start">
+                    <label class="label3">Opis usluge</label><br>
+                    <textarea class="input__textarea" [(ngModel)]="opisUsluge"></textarea>
+                </div>
+                <div class="space">
+                </div>
+        </div>
+    </div>
+
+
+<div class="wrapper__row">
+    <div class="row" fxLayout="row" fxLayoutAlign="space-between center">
+        <div class="zahtev__column" fxLayout="column" fxLayoutAlign="space-around start">
+            <div class="zahtev__row" fxLayout="row" fxLayoutAlign="space-between start">
+                <label>Jedinica mere</label><br>
+                <select class="input" [(ngModel)]="jedinicaMere.sifraJM" >
+                    <option *ngFor="let jedinicaMere of jediniceMere" [value]="jedinicaMere.sifraJM">{{jedinicaMere.nazivJM}}</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="zahtev__column" fxLayout="column" fxLayoutAlign="space-around start">
+            <button (click)="izmeni()" type="button">Sacuvaj uslugu</button>
+        
+        <div class="space">
+        </div>
+        <!-- <div class="zahtev__column" fxLayout="column" fxLayoutAlign="space-around start"> -->
+            <button (click)="obrisi()" type="button">Obrisi uslugu</button>
+        
+        <div class="space">
+        </div>
+        <!-- <div class="zahtev__column" fxLayout="column" fxLayoutAlign="space-around start"> -->
+            <button type="button" (click)="odustani()">Ponisti</button>
+        </div>
+
+
+    </div>
+</div>
+</div>
+

@@ -1,0 +1,37 @@
+<div class="wrapper" >
+
+    <input  type="date"  [(ngModel)]="datumOd">
+    <input  type="date"  [(ngModel)]="datumDo">
+    <div class="space">
+    </div>
+    <button (click)="searchThis()">Pretrazi</button>
+    <div class="wrapper__row2" >
+
+        <div class="row" >
+           
+            <div class="table__wrapper">
+                <table cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th>DatumOd</th>
+                        <th>DatumDo</th>
+                        <th>Restoran</th>
+                        <th>Prikaz</th>
+                        <th>Izmena</th>
+                        <th>Brisanje</th>
+                    </tr>
+                    <tr *ngFor="let izvestaj of izvestaji">
+                        <td>{{izvestaj.datumOD}}</td>
+                        <td>{{izvestaj.datumDO}}</td>
+                        <td>{{izvestaj.restoran.nazivRestorana}}</td>
+                        <td><button (click)="prikaziIzvestaj(izvestaj.rbIzvestaja)">Prikazi</button></td>
+                        <td><button (click)="izmeniIzvestaj(izvestaj.rbIzvestaja)">Izmeni</button></td>
+                        <td><button (click)="obrisiIzvestaj(izvestaj.rbIzvestaja)">Obrisi</button></td>
+                    </tr>
+                </table>
+                <br>
+                <button (click)="kreirajIzvestaj()">Kreiraj novi izvestaj</button>
+            </div>
+        </div>
+    </div>
+
+</div>

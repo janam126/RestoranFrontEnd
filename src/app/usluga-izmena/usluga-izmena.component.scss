@@ -1,0 +1,70 @@
+button {
+    padding: 12px 28px;
+    border: darkblue;
+    border-radius: 12px;
+    color: white;
+    background-color: rgb(196, 236, 85);
+    margin-left: 4%;
+    margin-right: 10px;
+  }
+
+  .space {
+    width: 4px;
+    height: auto;
+    display: inline-block;
+  }
+
+  span.title{
+      color: black;
+      font-weight: bold;
+      text-align: center;
+      font-size: 25px;
+      margin-left: 4%;
+      margin-right: 10px;
+  }
+
+  label{
+    margin-left: 4%;
+    margin-right: 10px;
+    color: black;
+    padding: 8px;
+    font-size: 17px;
+  }
+  
+  input {
+    box-sizing: border-box;
+    padding: 5px 10px;
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    margin-left: 4%;
+    margin-right: 10px;
+    font-size: 16px;
+  }
+
+  .input__textarea {
+    width: 50%;
+    height: 100px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    margin-left: 4%;
+    margin-right: 10px;
+  }
+
+  select.input{
+    box-sizing: border-box;
+    padding: 5px 10px;
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    margin-left: 4%;
+    margin-right: 10px;
+    font-size: 16px;
+  }

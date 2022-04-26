@@ -1,0 +1,95 @@
+
+ <div class="row" fxLayout="row" fxLayoutAlign="space-between center">
+           
+    <div class="zahtev__row" fxLayout="row" fxLayoutAlign="space-between start">                  
+        <label>Status</label>
+        <input [readonly] ="true" class="input" type="text" [(ngModel)]="status" />
+
+        <button (click)="postaviStatus()" type="button">Postavi status</button>
+    </div>
+</div>
+
+<div class="wrapper" fxLayout="column" fxLayoutAlign="space-around center">
+    <div class="wrapper__row" fxLayout="column" fxLayoutAlign="space-around start">
+        <span class="title">Unos izvestaja o broju dorucaka</span>
+        <div class="row" fxLayout="row" fxLayoutAlign="space-between center">
+           
+                <div class="zahtev__row" fxLayout="row" fxLayoutAlign="space-between start">                  
+                    <label>ID</label>
+                    <input [readonly] ="true" class="input" type="number" [(ngModel)]="rbIzvestaja" />
+
+                    <label>Restoran</label>
+                    <select class="input" [(ngModel)]="restoran.restoranID">
+                    <option *ngFor="let restoran of restorani" [value]="restoran.restoranID">{{restoran.nazivRestorana}}</option>
+                </select>
+                    <label>Datum od</label>
+                    <input class="input" type="date" [(ngModel)]="this.datumOD" />
+
+                    <label>Datum do</label>
+                    <input class="input" type="date" [(ngModel)]="this.datumDO" />
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper" fxLayout="column" fxLayoutAlign="space-around center">
+    <div class="wrapper__row" fxLayout="column" fxLayoutAlign="space-around start">
+        <span class="title">Stavke izvestaja</span>
+        <div class="row" fxLayout="row" fxLayoutAlign="space-between center">
+           
+                <div class="zahtev__row" fxLayout="row" fxLayoutAlign="space-between start">    
+                    
+                    <label>Rb stavke</label>
+                    <input  class="input" type="number" [(ngModel)]="rbStavke" />
+
+                    <label>Datum</label>
+                    <input class="input" type="date" [(ngModel)]="datum" />
+
+                    <label>Dan</label>
+                    <input class="input" type="text" [(ngModel)]="dan" />
+
+                    <label>Broj dorucaka</label>
+                    <input class="input" type="number" [(ngModel)]="brojDorucaka" />
+
+                    <button (click)="dodajStavku()" type="button">Dodaj stavku</button>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" fxLayout="row" fxLayoutAlign="center center">
+    <div class="table__wrapper">
+      <table cellspacing="0" cellpadding="0">
+        <tr>
+          <th>#</th>
+          <th>Datum</th>
+          <th>Dan</th>
+          <th>Broj dorucaka</th>
+          <th>Brisanje</th>
+        </tr>
+        <tr *ngFor="let stavka of stavkeIzvestaja">
+          <td> <input  class="input" type="number" [(ngModel)]=stavka.rbStavke/></td>
+          <td><input class="input" type="date" [(ngModel)]=stavka.datum /></td>
+          <td><input class="input" type="text" [(ngModel)]=stavka.dan /></td>
+          <td><input class="input" type="number" [(ngModel)]=stavka.brojDorucaka (focus)="sacuvajPocetnuVrednost(stavka.brojDorucaka)" (change)="promeniBrojDorucaka(stavka.brojDorucaka)"/></td>
+          <td><button (click)="obrisiStavku(stavka.rbStavke)">Obrisi stavku</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <br><br><br><br>
+<div class="row" fxLayout="row" fxLayoutAlign="space-between center">
+           
+    <div class="zahtev__row" fxLayout="row" fxLayoutAlign="space-between start">                  
+        <label>Ukupan broj dorucaka</label>
+        <input class="input" [readonly] ="true" type="number" [(ngModel)]="ukupanBrojDorucaka" />
+
+        <label>Zaposleni</label>
+        <select  (change)='onOptionsSelected($event)' class="input" [(ngModel)]="zaposlen.zaposleniID">
+        <option *ngFor="let z of zaposleni" [value]="z.zaposleniID">{{z.prezime}}</option>
+        </select>
+
+        <button (click)="sacuvajIzvestaj()" type="button">Kreiraj</button>
+    </div>
+</div> 
